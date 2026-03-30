@@ -10,6 +10,20 @@ VS Code extension providing language support for the [wirespec](https://github.c
 - Bracket matching and auto-closing pairs
 - Code folding
 
+## Language Server
+
+The extension connects to `wirespec-lsp` for real-time diagnostics (parse and semantic errors).
+
+### Setup
+
+1. Install the LSP server: `cargo install --path /path/to/wirespec/crates/wirespec-lsp`
+2. Ensure `wirespec-lsp` is on your PATH
+3. Or configure `wirespec.lsp.serverPath` in VS Code settings
+
+### LSP Features
+
+- Real-time error diagnostics (parse errors, type errors, undefined references)
+
 ## Installation
 
 1. Clone this repository
