@@ -1,0 +1,134 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "wirespec",
+  "scopeName": "source.wirespec",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#annotations" },
+    { "include": "#numeric-literals" },
+    { "include": "#constants" },
+    { "include": "#keywords-control" },
+    { "include": "#keywords-definition" },
+    { "include": "#storage-types" },
+    { "include": "#variable-language" },
+    { "include": "#punctuation-arrow" },
+    { "include": "#punctuation-range" },
+    { "include": "#punctuation-path" },
+    { "include": "#operators" },
+    { "include": "#type-name" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.wirespec",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.line.number-sign.wirespec",
+          "match": "#.*$"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.wirespec",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.wirespec",
+          "match": "\\\\(?:[\"\\\\nrt0]|x[0-9a-fA-F]{2}|u\\{[0-9a-fA-F]+\\})"
+        }
+      ]
+    },
+    "annotations": {
+      "name": "entity.name.function.wirespec",
+      "match": "@(?:endian|checksum|strict|doc|max_len|derive)\\b"
+    },
+    "numeric-literals": {
+      "patterns": [
+        {
+          "name": "constant.numeric.hex.wirespec",
+          "match": "\\b0x[0-9a-fA-F][0-9a-fA-F_]*\\b"
+        },
+        {
+          "name": "constant.numeric.binary.wirespec",
+          "match": "\\b0b[01][01_]*\\b"
+        },
+        {
+          "name": "constant.numeric.octal.wirespec",
+          "match": "\\b0o[0-7][0-7_]*\\b"
+        },
+        {
+          "name": "constant.numeric.decimal.wirespec",
+          "match": "\\b[0-9][0-9_]*\\b"
+        }
+      ]
+    },
+    "constants": {
+      "name": "constant.language.wirespec",
+      "match": "\\b(?:true|false|null|terminal)\\b"
+    },
+    "keywords-control": {
+      "name": "keyword.control.wirespec",
+      "match": "\\b(?:module|import|export|transition|initial|on|guard|action|delegate|if|let|match|require|within|static_assert)\\b"
+    },
+    "keywords-definition": {
+      "name": "keyword.other.wirespec",
+      "match": "\\b(?:packet|frame|capsule|enum|flags|const|type|state|machine|varint|extern|asn1|encoding|continuation_bit|value_bits|max_bytes|byte_order|length_or_remaining)\\b"
+    },
+    "storage-types": {
+      "name": "storage.type.wirespec",
+      "match": "\\b(?:u8|u16|u16le|u16be|u24|u32|u32le|u32be|u64|i8|i16|i32|i64|bool|bytes|bits|bit|remaining|fill)\\b"
+    },
+    "variable-language": {
+      "name": "variable.language.wirespec",
+      "match": "\\b(?:src|dst|child_state_changed|in_state|all)\\b"
+    },
+    "punctuation-arrow": {
+      "name": "punctuation.separator.arrow.wirespec",
+      "match": "->"
+    },
+    "punctuation-range": {
+      "name": "punctuation.separator.range.wirespec",
+      "match": "\\.\\.="
+    },
+    "punctuation-path": {
+      "name": "punctuation.separator.path.wirespec",
+      "match": "::"
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.comparison.wirespec",
+          "match": "(?:==|!=|<=|>=|<|>)"
+        },
+        {
+          "name": "keyword.operator.logical.wirespec",
+          "match": "&&|\\|\\||!"
+        },
+        {
+          "name": "keyword.operator.bitwise.wirespec",
+          "match": "<<|>>|&|\\||\\^|~"
+        },
+        {
+          "name": "keyword.operator.arithmetic.wirespec",
+          "match": "[+\\-*/%]"
+        },
+        {
+          "name": "keyword.operator.coalesce.wirespec",
+          "match": "\\?\\?"
+        },
+        {
+          "name": "keyword.operator.assignment.wirespec",
+          "match": "="
+        }
+      ]
+    },
+    "type-name": {
+      "name": "entity.name.type.wirespec",
+      "match": "\\b[A-Z][a-zA-Z0-9]*\\b"
+    }
+  }
+}
