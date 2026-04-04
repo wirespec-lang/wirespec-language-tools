@@ -86,3 +86,5 @@ Open any `.wspec` file. You should see:
 ## License
 
 Apache-2.0
+
+Copyright (c) 2026 mp0rta
