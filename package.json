@@ -32,6 +32,12 @@
         "path": "./syntaxes/wirespec.tmLanguage.json"
       }
     ],
+    "snippets": [
+      {
+        "language": "wirespec",
+        "path": "./snippets/wirespec.json"
+      }
+    ],
     "configuration": {
       "title": "wirespec",
       "properties": {

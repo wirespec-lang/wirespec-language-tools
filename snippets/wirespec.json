@@ -1,0 +1,94 @@
+{
+    "Packet": {
+        "prefix": "packet",
+        "body": [
+            "packet ${1:Name} {",
+            "    ${2:field}: ${3:u8},",
+            "    $0",
+            "}"
+        ],
+        "description": "Define a packet"
+    },
+    "Frame": {
+        "prefix": "frame",
+        "body": [
+            "frame ${1:Name} = match ${2:tag}: ${3:u8} {",
+            "    ${4:0} => ${5:Variant} { $0 },",
+            "    _ => Unknown { data: bytes[remaining] },",
+            "}"
+        ],
+        "description": "Define a frame with match"
+    },
+    "Capsule": {
+        "prefix": "capsule",
+        "body": [
+            "capsule ${1:Name} {",
+            "    ${2:type_id}: u8,",
+            "    ${3:length}: u16,",
+            "    payload: match ${2} within ${3} {",
+            "        ${4:0} => ${5:Data} { data: bytes[remaining] },",
+            "        _ => Unknown { data: bytes[remaining] },",
+            "    },",
+            "}"
+        ],
+        "description": "Define a capsule (TLV)"
+    },
+    "State Machine": {
+        "prefix": "state machine",
+        "body": [
+            "state machine ${1:Name} {",
+            "    state ${2:Init} { $3 }",
+            "    state ${4:Done} [terminal]",
+            "    initial ${2}",
+            "",
+            "    transition ${2} -> ${4} { on ${5:event} }",
+            "    $0",
+            "}"
+        ],
+        "description": "Define a state machine"
+    },
+    "Transition": {
+        "prefix": "transition",
+        "body": [
+            "transition ${1:Source} -> ${2:Dest} {",
+            "    on ${3:event}",
+            "    $0",
+            "}"
+        ],
+        "description": "Define a transition"
+    },
+    "Transition with Guard": {
+        "prefix": "transition guard",
+        "body": [
+            "transition ${1:Source} -> ${2:Dest} {",
+            "    on ${3:event}",
+            "    guard ${4:src.field < 3}",
+            "    action { ${5:dst.field = src.field;} }",
+            "}"
+        ],
+        "description": "Define a transition with guard and action"
+    },
+    "Enum": {
+        "prefix": "enum",
+        "body": [
+            "enum ${1:Name}: ${2:u8} {",
+            "    ${3:Member} = ${4:0},",
+            "    $0",
+            "}"
+        ],
+        "description": "Define an enum"
+    },
+    "Verify NoDeadlock": {
+        "prefix": "verify",
+        "body": "verify NoDeadlock",
+        "description": "Add NoDeadlock verification"
+    },
+    "Verify Property": {
+        "prefix": "verify property",
+        "body": [
+            "verify property ${1:Name}:",
+            "    ${2:in_state(${3:A})} -> ${4:[] not in_state(${5:B})}"
+        ],
+        "description": "Define a custom verify property"
+    }
+}
