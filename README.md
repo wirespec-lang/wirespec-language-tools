@@ -32,3 +32,8 @@ The extension connects to `wirespec-lsp` for real-time diagnostics (parse and se
 ## Development
 
 The grammar is defined in `syntaxes/wirespec.tmLanguage.json` using the TextMate grammar format.
+
+## License
+Apache-2.0
+
+Copyright (c) 2026 mp0rta
