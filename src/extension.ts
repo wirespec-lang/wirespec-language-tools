@@ -1,3 +1,4 @@
+import * as vscode from 'vscode';
 import { workspace, ExtensionContext } from 'vscode';
 import {
   LanguageClient,
@@ -30,7 +31,11 @@ export function activate(context: ExtensionContext) {
     clientOptions
   );
 
-  client.start();
+  client.start().catch((err: Error) => {
+    vscode.window.showWarningMessage(
+      `wirespec-lsp failed to start: ${err.message}. Install with: cargo install --path <wirespec>/crates/wirespec-lsp`
+    );
+  });
 }
 
 export function deactivate(): Thenable<void> | undefined {

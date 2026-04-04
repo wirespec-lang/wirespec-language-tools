@@ -44,7 +44,7 @@
     },
     "annotations": {
       "name": "entity.name.function.wirespec",
-      "match": "@(?:endian|checksum|strict|doc|max_len|derive)\\b"
+      "match": "@[a-zA-Z_][a-zA-Z0-9_]*"
     },
     "numeric-literals": {
       "patterns": [
@@ -72,7 +72,7 @@
     },
     "keywords-control": {
       "name": "keyword.control.wirespec",
-      "match": "\\b(?:module|import|export|transition|initial|on|guard|action|delegate|if|let|match|require|within|static_assert|verify|property)\\b"
+      "match": "\\b(?:module|import|export|transition|initial|on|guard|action|delegate|if|let|match|require|within|static_assert|verify|property|and|or|not|in_state)\\b"
     },
     "keywords-definition": {
       "name": "keyword.other.wirespec",
@@ -84,7 +84,7 @@
     },
     "variable-language": {
       "name": "variable.language.wirespec",
-      "match": "\\b(?:src|dst|child_state_changed|in_state|all)\\b"
+      "match": "\\b(?:src|dst|child_state_changed|all)\\b"
     },
     "punctuation-arrow": {
       "name": "punctuation.separator.arrow.wirespec",
@@ -101,8 +101,16 @@
     "operators": {
       "patterns": [
         {
+          "name": "punctuation.separator.fat-arrow.wirespec",
+          "match": "=>"
+        },
+        {
           "name": "keyword.operator.comparison.wirespec",
           "match": "(?:==|!=|<=|>=|<|>)"
+        },
+        {
+          "name": "keyword.operator.wirespec",
+          "match": "<-"
         },
         {
           "name": "keyword.operator.logical.wirespec",
@@ -123,6 +131,14 @@
         {
           "name": "keyword.operator.temporal.wirespec",
           "match": "~>"
+        },
+        {
+          "name": "keyword.operator.assignment.wirespec",
+          "match": "\\+="
+        },
+        {
+          "name": "punctuation.separator.range.wirespec",
+          "match": "\\.\\."
         },
         {
           "name": "keyword.operator.assignment.wirespec",

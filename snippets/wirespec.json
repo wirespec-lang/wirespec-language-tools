@@ -85,10 +85,22 @@
     },
     "Verify Property": {
         "prefix": "verify property",
-        "body": [
-            "verify property ${1:Name}:",
-            "    ${2:in_state(${3:A})} -> ${4:[] not in_state(${5:B})}"
-        ],
+        "body": "verify property ${1:Name}: ${2:in_state(${3:A})} -> [] not in_state(${4:B})",
         "description": "Define a custom verify property"
+    },
+    "Const": {
+        "prefix": "const",
+        "body": "const ${1:NAME}: ${2:u8} = ${3:0}",
+        "description": "Define a constant"
+    },
+    "Type Alias": {
+        "prefix": "type",
+        "body": "type ${1:Name} = ${2:u8}",
+        "description": "Define a type alias"
+    },
+    "Extern ASN.1": {
+        "prefix": "extern asn1",
+        "body": "extern asn1 \"${1:schema.asn1}\" use ${2:crate::types} { ${3:TypeName} }",
+        "description": "Import ASN.1 types"
     }
 }
