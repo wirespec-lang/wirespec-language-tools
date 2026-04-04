@@ -72,7 +72,7 @@
     },
     "keywords-control": {
       "name": "keyword.control.wirespec",
-      "match": "\\b(?:module|import|export|transition|initial|on|guard|action|delegate|if|let|match|require|within|static_assert)\\b"
+      "match": "\\b(?:module|import|export|transition|initial|on|guard|action|delegate|if|let|match|require|within|static_assert|verify|property)\\b"
     },
     "keywords-definition": {
       "name": "keyword.other.wirespec",
@@ -119,6 +119,10 @@
         {
           "name": "keyword.operator.coalesce.wirespec",
           "match": "\\?\\?"
+        },
+        {
+          "name": "keyword.operator.temporal.wirespec",
+          "match": "~>"
         },
         {
           "name": "keyword.operator.assignment.wirespec",
