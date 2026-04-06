@@ -33,7 +33,7 @@ export function activate(context: ExtensionContext) {
 
   client.start().catch((err: Error) => {
     vscode.window.showWarningMessage(
-      `wirespec-lsp failed to start: ${err.message}. Install with: cargo install --path <wirespec>/crates/wirespec-lsp`
+      `wirespec-lsp failed to start: ${err.message}. Install with: cargo install wirespec-lsp`
     );
   });
 }

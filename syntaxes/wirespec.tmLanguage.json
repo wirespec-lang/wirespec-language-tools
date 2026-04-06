@@ -80,7 +80,7 @@
     },
     "storage-types": {
       "name": "storage.type.wirespec",
-      "match": "\\b(?:u8|u16|u16le|u16be|u24|u32|u32le|u32be|u64|i8|i16|i32|i64|bool|bytes|bits|bit|remaining|fill)\\b"
+      "match": "\\b(?:u8|u16|u16le|u16be|u24|u24le|u24be|u32|u32le|u32be|u64|u64le|u64be|i8|i16|i16le|i16be|i32|i32le|i32be|i64|i64le|i64be|bool|bytes|bits|bit|remaining|fill)\\b"
     },
     "variable-language": {
       "name": "variable.language.wirespec",

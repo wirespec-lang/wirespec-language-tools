@@ -79,9 +79,24 @@
         "description": "Define an enum"
     },
     "Verify NoDeadlock": {
-        "prefix": "verify",
+        "prefix": "verify nodeadlock",
         "body": "verify NoDeadlock",
         "description": "Add NoDeadlock verification"
+    },
+    "Verify AllReachClosed": {
+        "prefix": "verify allreachclosed",
+        "body": "verify AllReachClosed",
+        "description": "Add AllReachClosed verification"
+    },
+    "Transition with Delegate": {
+        "prefix": "transition delegate",
+        "body": [
+            "transition ${1:Source} -> ${2:Dest} {",
+            "    on ${3:event}",
+            "    delegate ${4:src}.${5:child} <- ${3}",
+            "}"
+        ],
+        "description": "Define a transition with delegate"
     },
     "Verify Property": {
         "prefix": "verify property",
