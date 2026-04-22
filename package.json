@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "publisher": "wirespec-lang",
   "icon": "wirespec.png",
+  "license": "Apache-2.0",
+  "keywords": ["wirespec", "protocol", "binary", "lsp", "wspec"],
   "repository": {
     "type": "git",
     "url": "https://github.com/wirespec-lang/wirespec-language-tools"

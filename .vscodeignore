@@ -1,7 +1,9 @@
 .git/
 .gitignore
+.claude/
 node_modules/
 src/
 *.ts
+*.vsix
 tsconfig.json
 !out/**
