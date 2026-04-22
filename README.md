@@ -34,12 +34,16 @@ Real-time language intelligence powered by `wirespec-lsp`:
 ### 1. Install the language server
 
 ```bash
-git clone https://github.com/wirespec-lang/wirespec
-cd wirespec
-cargo install --path crates/wirespec-lsp
+cargo install wirespec-lsp
 ```
 
-This installs `wirespec-lsp`, the language server binary. For the wirespec compiler (`wirespec compile`, `wirespec verify`), see the [wirespec README](https://github.com/wirespec-lang/wirespec).
+This installs `wirespec-lsp`, the language server binary. For the wirespec compiler (`wirespec compile`, `wirespec verify`):
+
+```bash
+cargo install wirespec
+```
+
+See the [wirespec README](https://github.com/wirespec-lang/wirespec) for more details.
 
 ### 2. Install the extension
 
