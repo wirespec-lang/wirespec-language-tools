@@ -4,6 +4,7 @@
   "description": "Language support for wirespec protocol description language",
   "version": "0.1.0",
   "publisher": "wirespec-lang",
+  "icon": "wirespec.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/wirespec-lang/wirespec-language-tools"
