@@ -21,7 +21,7 @@ Real-time language intelligence powered by `wirespec-lsp`:
 
 ### Code Snippets
 
-12 snippets for common patterns: `packet`, `frame`, `capsule`, `state machine`, `transition`, `enum`, `const`, `type`, `verify`, `verify property`, `extern asn1`, and more.
+14 snippets for common patterns: `packet`, `frame`, `capsule`, `state machine`, `transition`, `transition with guard`, `transition with delegate`, `enum`, `const`, `type alias`, `verify`, `verify property`, `extern asn1`, and more.
 
 ### Editor Support
 
@@ -47,6 +47,12 @@ See the [wirespec README](https://github.com/wirespec-lang/wirespec) for more de
 
 ### 2. Install the extension
 
+Search for `wirespec-lang` in the VS Code Extensions panel, or run:
+
+```bash
+code --install-extension wirespec-lang.wirespec
+```
+
 **From source (development):**
 
 ```bash
@@ -56,11 +62,7 @@ npm install
 npx tsc -p ./
 ```
 
-Then in VS Code: press **F5** to launch an Extension Development Host, or:
-
-```bash
-code --extensionDevelopmentPath=/path/to/wirespec-language-tools
-```
+Then in VS Code: press **F5** to launch an Extension Development Host.
 
 ### 3. Verify it works
 
