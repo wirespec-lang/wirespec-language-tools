@@ -2,7 +2,7 @@
   "name": "wirespec",
   "displayName": "wirespec-lang",
   "description": "Language support for wirespec protocol description language",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "wirespec-lang",
   "icon": "wirespec.png",
   "license": "Apache-2.0",
