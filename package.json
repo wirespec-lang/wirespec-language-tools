@@ -18,7 +18,7 @@
     "url": "https://github.com/wirespec-lang/wirespec-language-tools"
   },
   "engines": {
-    "vscode": "^1.75.0"
+    "vscode": "^1.78.0"
   },
   "categories": [
     "Programming Languages"
@@ -38,6 +38,10 @@
         "extensions": [
           ".wspec"
         ],
+        "icon": {
+          "light": "./fileicon.png",
+          "dark": "./fileicon.png"
+        },
         "configuration": "./language-configuration.json"
       }
     ],
